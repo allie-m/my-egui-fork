@@ -1686,7 +1686,7 @@ pub fn create_winit_window_builder(
 
     #[cfg(target_os = "windows")]
     {
-        use winit::platform::windows::WindowBuilderExtWindows as _;
+        use winit::platform::windows::WindowAttributesExtWindows as _;
         if let Some(enable) = _drag_and_drop {
             window_builder = window_builder.with_drag_and_drop(enable);
         }
@@ -1697,7 +1697,7 @@ pub fn create_winit_window_builder(
 
     #[cfg(target_os = "macos")]
     {
-        use winit::platform::macos::WindowBuilderExtMacOS as _;
+        use winit::platform::macos::WindowAttributesExtMacOS as _;
         window_builder = window_builder
             .with_title_hidden(!_title_shown.unwrap_or(true))
             .with_titlebar_buttons_hidden(!_titlebar_buttons_shown.unwrap_or(true))
